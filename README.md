@@ -1,6 +1,6 @@
 # WebFTP
 
-**React + Elector FTP client**
+**React + Electron FTP client**
 
 ![ezgif com-video-to-gif 5](https://user-images.githubusercontent.com/9338324/50801034-54238180-12e3-11e9-9571-f7dc75f13092.gif)
 

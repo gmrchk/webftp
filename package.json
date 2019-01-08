@@ -1,7 +1,7 @@
 {
   "name": "webftp",
   "version": "1.0.0",
-  "description": "React + Elector FTP client",
+  "description": "React + Electron FTP client",
   "main": "public/electron-starter.js",
   "private": true,
   "homepage": "./",
