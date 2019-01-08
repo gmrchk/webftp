@@ -1,0 +1,92 @@
+.Files 
+    //width 50%
+    height 100%
+    border-right 2px solid $bordergrey
+    position relative
+    overflow-y auto
+    border-bottom 2px solid $bordergrey
+
+    &--local
+        grid-area filesLocal
+
+    &--remote
+        grid-area filesRemote
+
+.FilesHeader 
+    padding 18px
+    min-height 56px
+    border-bottom 2px solid $bordergrey
+
+.FilesContainer 
+    position relative
+    height calc(100% - 56px)
+    user-select none
+
+.FilesItem 
+    display block
+    /*padding 10px 18px 10px 18px*/
+    vertical-align middle
+    white-space nowrap
+    outline none
+
+    &-inner
+        padding 4px 18px 4px 18px
+        cursor pointer
+        pointer-events none
+
+    & > div
+        display inline-block
+
+    &-name
+        vertical-align middle
+        display inline-block
+        pointer-events none
+        white-space nowrap
+        overflow hidden
+        text-overflow ellipsis
+        max-width calc(100% - 20px)
+
+    &-icon
+        vertical-align middle
+        display inline-block
+        width 30px
+        display inline-block
+        text-align left
+        /*opacity .5*/
+        position relative
+        pointer-events none
+
+        img
+            width 18px
+            margin 4px 0 0
+
+    &-iconName
+        vertical-align middle
+        display inline-block
+        font-size 10px
+        position absolute
+        bottom -3px
+        left 9px
+        transform translateX(-50%)
+        background #fff
+        padding 0 2px
+        line-height 12px
+        max-width 35px
+        overflow hidden
+        text-overflow ellipsis
+        pointer-events none
+
+    &--file .FilesItem-icon
+        opacity .5
+
+    &--file:not(.FilesItem--noExtension) .FilesItem-icon img
+        margin 0 0 6px
+
+    &--active, &--activehover
+        background $lightblue
+
+    &:hover
+        background $lightgrey
+
+    &:focus
+        background $lightorange

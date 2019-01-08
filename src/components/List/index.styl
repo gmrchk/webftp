@@ -1,0 +1,117 @@
+.List 
+    width 220px
+    min-width 220px
+    height 100%
+    border-right 2px solid $bordergrey
+    border-bottom 2px solid $bordergrey
+    grid-area list
+    position relative
+    overflow-y auto
+    user-select none
+
+    &.is-searching .ListItem:first-child
+        background $lightorange
+        opacity 1
+
+        .ListItem-name
+            opacity 1
+
+        &:before
+            background $orange
+
+.ListContainer 
+    min-height calc(100% - 57px)
+    position relative
+
+.ListSearch 
+    position relative
+
+    input
+        -webkit-appearance none
+        border none
+        padding 18px 42px 18px 32px
+        width 100%
+        font-size 15px
+        border-bottom 2px solid $bordergrey
+
+
+        &:focus
+            border-color $blue
+            background $lightblue
+            outline none
+
+    img
+        position absolute
+        width 18px
+        right 24px
+        top 18px
+        opacity .4
+
+
+
+.ListItem 
+    display flex
+    justify-content space-between
+    padding 18px 20px 18px 32px
+    cursor pointer
+    position relative
+
+    &:before
+        content ''
+        display block
+        position absolute
+        top 0
+        bottom 0
+        left 0
+        width 2px
+
+    &:hover
+        background $lightorange
+
+        &:before
+            background $orange
+
+    &:active, &.is-active
+        background $lightblue
+
+
+    &:hover .ListItem-name, &:hover .ListItem-icon, &.is-active .ListItem-name, &.is-active .ListItem-icon
+        opacity 1
+
+    &.is-active:before, .ListItem:active:before
+        background $blue
+
+    &:focus
+        background $lightblue
+        outline none
+
+    &-name
+        opacity .5
+        max-width calc(100% - 24px)
+        overflow hidden
+        text-overflow ellipsis
+
+    &-icon
+        opacity .5
+        width 16px
+
+    &--add
+        text-align center
+        justify-content center
+        padding 16px 20px 16px
+        align-items center
+        font-size 13px
+
+        &:hover
+            //border-bottom 2px solid $orange
+
+            &:before
+                display none
+
+        span
+            //color $blue
+            font-size 26px
+            line-height 20px
+            vertical-align middle
+            display inline-block
+            transform translate(0, -3px)

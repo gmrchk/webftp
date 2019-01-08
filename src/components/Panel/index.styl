@@ -1,0 +1,43 @@
+.Panel
+    &--transfer
+        height 100%
+        width 100%
+        background #fff
+        //border-top-left-radius 10px
+        //border-bottom-left-radius 10px
+        //transition .2s cubic-bezier(.455,.03,.515,.955) .1s
+        overflow hidden
+        flex-wrap wrap
+        z-index 10
+        display grid
+        grid-template-columns 220px calc(50% - 110px) calc(50% - 110px)
+        grid-template-rows calc(100% - 200px) 200px
+        grid-template-areas "list filesLocal filesRemote" "log queue queue"
+
+    &--edit
+        height 100%
+        width 100%
+        background #fff
+        //border-top-left-radius 10px
+        //border-bottom-left-radius 10px
+        //transition .2s cubic-bezier(.455,.03,.515,.955) .1s
+        overflow hidden
+        flex-wrap wrap
+        z-index 10
+        display grid
+        grid-template-columns 220px calc(100% - 220px)
+        grid-template-rows 100%
+        grid-template-areas "list board"
+
+    &--settings
+        height 100%
+        width 100%
+        background #fff
+        //border-top-left-radius 10px
+        //border-bottom-left-radius 10px
+        //transition .2s cubic-bezier(.455,.03,.515,.955) .1s
+        overflow hidden
+        flex-wrap wrap
+        z-index 10
+        display block
+       

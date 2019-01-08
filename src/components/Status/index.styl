@@ -1,0 +1,30 @@
+.Status 
+    padding 8px 0 8px 80px
+    font-size 15px
+    color $blue
+    -webkit-user-select none
+    cursor default
+
+    &-icon
+        display inline-block
+        vertical-align middle
+        margin -1px 8px 0 0
+
+        img
+            width 16px
+
+    &--loading
+        color $darkorange
+        cursor progress
+
+        .Status-icon
+            img
+                animation rotate .8s linear infinite
+
+@keyframes rotate 
+    0% 
+        transform rotate(0deg)
+    
+    100% 
+        transform rotate(360deg)
+    

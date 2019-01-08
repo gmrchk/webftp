@@ -1,0 +1,101 @@
+.Queue 
+    position relative
+    height 100%
+    overflow-y auto
+    grid-area queue
+
+.QueueItem 
+    display flex
+    padding 4px 18px 4px 0
+    align-items center
+
+    &:hover
+        background $lightorange
+
+    & > div
+        display inline-block
+        overflow hidden
+        text-overflow ellipsis
+        padding 0 20px 0 0
+        vertical-align middle
+        line-height 1.2
+        white-space nowrap
+        z-index 2
+
+    & > div:last-child
+        padding-right 0
+
+    &--inProgress
+        background $lightblue
+
+    &-name
+        width 30%
+
+    &-fromToFolder
+        width 15%
+
+    &-direction
+        text-align center
+        width 5%
+        padding-right 0 !important
+        min-width 35px
+
+        img
+            width 20px
+
+    &-priority
+        text-align center
+        width 5%
+        padding-right 0 !important
+
+    &-priority
+        &--1, &--2
+            color $blue
+
+        &--3, &--4
+            color $darkorange
+
+        &--5
+            color $red
+
+    &-size
+        text-align right
+        width 10%
+
+    &-transfered
+        text-align right
+        width 10%
+
+    &-progress
+        text-align right
+        width 100%
+        position absolute
+        top 0
+        left 0
+        padding-right 0 !important
+        z-index 1 !important
+
+        progress
+            background transparent !important
+
+        progress[value]
+            -webkit-appearance none
+            appearance none
+            height 32px
+            color #fff !important
+            background transparent !important
+            border none
+            width 100%
+
+            &::-webkit-progress-inner-element
+                background transparent
+
+            &::-webkit-progress-bar
+                background transparent
+
+            &::-webkit-progress-value
+                width 0
+                background $lightorange
+                transition .2s
+                background-size 35px 20px, 100% 100%, 100% 100%
+

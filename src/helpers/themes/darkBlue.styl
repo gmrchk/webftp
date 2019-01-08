@@ -1,0 +1,130 @@
+$theme_is_dark = true
+
+$theme_color_1 = #24303F
+$theme_color_2 = #1A222C
+$theme_color_3 = #476A93
+$theme_color_text = #fff
+$theme_color_highlight = $blue
+
+.theme-darkBlue
+    &.App
+        background $theme_color_1
+
+    .Panel
+        background $theme_color_2
+        color $theme_color_text
+
+    .Log,  .List
+        border-color $theme_color_1
+
+    .MenuItem
+        .MenuItem-icon
+            img
+                if($theme_is_dark)
+                    filter invert(1)
+
+        &:hover
+            .MenuItem-icon
+                background $theme_color_2
+
+        &--active
+             .MenuItem-icon
+                background $theme_color_highlight !important
+
+                img
+                    if($theme_is_dark)
+                        filter invert(0)
+
+    .Empty img
+        if($theme_is_dark)
+            filter invert(1)
+
+    .FilesItem--back img
+        if($theme_is_dark)
+            filter invert(1)
+
+    .List
+        &.is-searching .ListItem:first-child
+            background $theme_color_1
+            opacity 1
+
+            .ListItem-name
+                opacity 1
+
+            &:before
+                background $theme_color_3
+
+    .ListItem
+        .ListItem-name
+            opacity 1
+
+        &:hover, &:focus
+            background $theme_color_1
+
+            &:before
+                background transparent
+
+        &.is-active
+            background $theme_color_3
+
+            &:before
+                background $theme_color_highlight
+
+    .ListSearch
+        input
+            background $theme_color_2
+            border-bottom 2px solid $theme_color_1
+            color $theme_color_text
+
+            &::placeholder
+               color $theme_color_text
+
+        img
+            if($theme_is_dark)
+                filter invert(1)
+
+    .List, .Files
+        border-right 2px solid $theme_color_1
+        border-bottom 2px solid $theme_color_1
+
+    .FilesHeader
+        border-bottom 2px solid $theme_color_1
+
+    .FilesItem-iconName
+        background $theme_color_2
+
+    .FilesItem
+        &:hover, &:focus
+            background $theme_color_3
+
+        &--active
+            background $theme_color_1
+
+        &--file
+            .FilesItem-icon img
+                if($theme_is_dark)
+                    filter invert(1)
+
+    .Input
+        input
+            background $theme_color_2
+            color $theme_color_text
+            border 1px solid $theme_color_1
+
+        label
+            background $theme_color_2
+
+    .QueueItem
+        &--inProgress
+            background $theme_color_1
+
+        &-direction
+            img
+                if($theme_is_dark)
+                    filter invert(1) brightness(5) grayscale(1)
+
+        &-progress
+            progress[value]
+                &::-webkit-progress-value
+                    background $theme_color_3
+

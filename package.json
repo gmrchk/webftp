@@ -1,0 +1,57 @@
+{
+  "name": "webftp",
+  "version": "1.0.0",
+  "description": "React + Elector FTP client",
+  "main": "public/electron-starter.js",
+  "private": true,
+  "homepage": "./",
+  "build": {
+    "appId": "com.electron.webftp",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "extends": null
+  },
+  "preelectron-pack": "npm run build",
+  "scripts": {
+    "electron": "electron .",
+    "react": "BROWSER=none react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "dev": "concurrently 'npm run react' 'stylus -w ./src/index.styl' 'wait-on http://localhost:3000/ && npm run electron'",
+    "pack": "npm run build && node envupdater.js && npm run electron-pack",
+    "electron-pack": "electron-builder -c.extraMetadata.main=build/electron-starter.js"
+  },
+  "repository": "https://github.com/gmrchk/webftp",
+  "keywords": [
+    "Electron",
+    "FTP client"
+  ],
+  "author": "Georgy Marchuk",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "informed": "^1.7.0",
+    "jsftp": "^2.1.3",
+    "localstoragedb": "^2.3.1",
+    "node-localstorage": "^1.3.1",
+    "react": "^16.4.1",
+    "react-contextmenu": "^2.9.2",
+    "react-dom": "^16.4.1",
+    "react-s-alert": "^1.4.1",
+    "react-scripts": "1.1.4",
+    "react-tooltip": "^3.6.1",
+    "socks": "^2.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.0",
+    "electron": "~1.7.8",
+    "electron-builder": "^20.22.0",
+    "wait-on": "^2.1.0"
+  }
+}

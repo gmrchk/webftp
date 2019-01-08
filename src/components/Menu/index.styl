@@ -1,0 +1,47 @@
+.Menu 
+    margin 20px 0 0
+    text-align left
+    font-weight 700
+    -webkit-user-select none
+
+.MenuItem 
+    display block
+    padding 10px 2px
+    cursor pointer
+    vertical-align middle
+    white-space nowrap
+    margin 0 auto
+    opacity .5
+    //width 200px
+
+    &:hover, &--active, &:focus
+        opacity 1
+        outline none
+
+    &:hover .MenuItem-icon, &:focus .MenuItem-icon
+        background $darkgrey
+        outline none
+
+    &--active
+        color $lightblue
+
+        .MenuItem-icon
+            background $blue
+
+        &:hover .MenuItem-icon, &:focus .MenuItem-icon
+            background $blue
+
+    &-icon
+        width 46px
+        height 46px
+        display inline-block
+        vertical-align middle
+        position relative
+        padding 10px
+        border-radius 4px
+        pointer-events none
+
+    &-name
+        display inline-block
+        vertical-align middle
+        margin -2px 0 0 18px
